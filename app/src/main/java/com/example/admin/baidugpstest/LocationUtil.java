@@ -26,7 +26,7 @@ public class LocationUtil {
     public BDLocationListener myListener = new MyLocationListener();
     private LocationClient mLocationClient;
 
-    public LocationUtil(Context context) {
+    private LocationUtil(Context context) {
         mLocationClient = new LocationClient(context.getApplicationContext());
         initParams();
         mLocationClient.registerLocationListener(myListener);

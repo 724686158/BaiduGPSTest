@@ -12,13 +12,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LocationUtil locationUtil = new LocationUtil(this);
+        LocationUtil locationUtil = LocationUtil.getInstance(this);
         ;
         locationUtil.startMonitor();
 
         textView = (TextView) findViewById(R.id.baidu_gps_text_view);
         textView.setText("Latitude : " + locationUtil.getLocation().getLatitude() + "\n"
-                + "Longitude : " +locationUtil.getLocation().getLongitude() + "\n");
-        locationUtil.stopMonitor();
+                + "Longitude : " +locationUtil.getBaseLocation().longitude + "\n");
     }
 }
